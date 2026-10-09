@@ -1,0 +1,66 @@
+name: Bug report
+description: Report broken or incorrect behavior in Stellar ROS Bridge.
+title: "bug: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. For security issues, use the private advisory
+        link instead of this form.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. Observed: ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Commit / version
+      placeholder: "e.g. main @ a1b2c3d"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - bridge-core (domain / types)
+        - ros-bridge (ROS 2 integration)
+        - stellar-bridge (Soroban / RPC)
+        - bridge-node (runtime)
+        - docs / build / CI
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "OS, Rust version (`rustc -V`), ROS 2 distro, Stellar network (testnet/mainnet)"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs / output
+      render: shell
+    validations:
+      required: false

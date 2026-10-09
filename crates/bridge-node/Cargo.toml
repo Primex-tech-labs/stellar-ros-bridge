@@ -1,0 +1,14 @@
+[package]
+name = "bridge-node"
+description = "Runtime that wires ROS 2 transport to Stellar settlement."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+bridge-core = { workspace = true }
+ros-bridge = { workspace = true }
+stellar-bridge = { workspace = true }
+tracing = { workspace = true }

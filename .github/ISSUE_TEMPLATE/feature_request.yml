@@ -1,0 +1,38 @@
+name: Feature request
+description: Propose a new capability or improvement.
+title: "feat: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What is missing or painful today? Describe the "why", not just the "what".
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the change and any alternatives you considered.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - bridge-core (domain / types)
+        - ros-bridge (ROS 2 integration)
+        - stellar-bridge (Soroban / RPC)
+        - bridge-node (runtime)
+        - docs / build / CI
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected impact
+      description: Who benefits and how? Note any security or on-chain implications.
+    validations:
+      required: false

@@ -1,0 +1,17 @@
+[package]
+name = "ros-bridge"
+description = "ROS 2 integration for Stellar ROS Bridge, built on rclrs."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[features]
+# Enabling `ros` pulls in rclrs and requires a sourced ROS 2 environment.
+# Implemented by the "ROS 2 rclrs transport" Wave issue.
+default = []
+ros = []
+
+[dependencies]
+bridge-core = { workspace = true }

@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+jobs:
+  # Builds and tests the crates that do not require a ROS 2 installation.
+  core:
+    name: core (fmt, clippy, test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo test --workspace
+
+  # ROS-facing crates need a ROS 2 environment. This job is present so the
+  # pipeline is ready for it, but is disabled until the bridge node lands.
+  ros:
+    name: ros (ROS 2 Jazzy)
+    runs-on: ubuntu-latest
+    if: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distributions: jazzy
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build ros-bridge
+        shell: bash
+        run: |
+          source /opt/ros/jazzy/setup.bash
+          cargo build -p ros-bridge

@@ -1,0 +1,30 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/bridge-core",
+    "crates/ros-bridge",
+    "crates/stellar-bridge",
+    "crates/bridge-node",
+]
+default-members = [
+    "crates/bridge-core",
+    "crates/stellar-bridge",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/Primex-tech-labs/stellar-ros-bridge"
+rust-version = "1.83"
+authors = ["Primex Tech Labs"]
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tracing = "0.1"
+
+bridge-core = { path = "crates/bridge-core" }
+ros-bridge = { path = "crates/ros-bridge" }
+stellar-bridge = { path = "crates/stellar-bridge" }

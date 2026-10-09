@@ -1,0 +1,65 @@
+# Declarative label set. Apply with a labeler action (e.g. crazy-max/ghaction-github-labeler)
+# or sync manually. The "Stellar Wave" label drives the Drips Wave bot workflow.
+- name: "Stellar Wave"
+  color: "7c3aed"
+  description: "In scope for the current Stellar Wave program."
+
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers."
+
+- name: "task"
+  color: "0e8a16"
+  description: "Scoped work item."
+
+- name: "bug"
+  color: "d73a4a"
+  description: "Something isn't working."
+
+- name: "enhancement"
+  color: "a2eeef"
+  description: "New feature or request."
+
+- name: "documentation"
+  color: "0075ca"
+  description: "Docs improvements."
+
+- name: "triage"
+  color: "fbca04"
+  description: "Needs maintainer triage."
+
+- name: "blocked"
+  color: "b60205"
+  description: "Waiting on a dependency or decision."
+
+- name: "complexity: trivial"
+  color: "c2e0c6"
+  description: "Trivial — 100 Wave points."
+
+- name: "complexity: medium"
+  color: "bfd4f2"
+  description: "Medium — 150 Wave points."
+
+- name: "complexity: high"
+  color: "f9d0c4"
+  description: "High — 200 Wave points."
+
+- name: "area: core"
+  color: "5319e7"
+  description: "bridge-core domain model."
+
+- name: "area: ros"
+  color: "1d76db"
+  description: "ROS 2 integration."
+
+- name: "area: stellar"
+  color: "0052cc"
+  description: "Stellar / Soroban integration."
+
+- name: "area: node"
+  color: "006b75"
+  description: "bridge-node runtime."
+
+- name: "area: docs"
+  color: "0075ca"
+  description: "Documentation and guides."

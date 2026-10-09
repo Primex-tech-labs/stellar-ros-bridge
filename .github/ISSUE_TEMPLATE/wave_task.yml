@@ -1,0 +1,82 @@
+name: Wave task
+description: A scoped, points-tagged task for the Stellar Wave program.
+title: ""
+labels: ["Stellar Wave", "task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Maintainer-only template. Write issues that a contributor can finish in
+        a single Wave. See `docs/issue-guide.md` for the framework this follows.
+        Remember: `Trivial` = 100, `Medium` = 150, `High` = 200 points.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What should be built or fixed, in 2–4 sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Requirements and context
+      description: The why, links to designs/specs, constraints, and what "done" looks like.
+    validations:
+      required: true
+  - type: textarea
+    id: execution
+    attributes:
+      label: Suggested execution
+      description: Fork/branch and the files or modules to touch.
+      value: |
+        - Fork the repo and create a branch
+          `git checkout -b <type>/<short-description>`
+        - Touch:
+          - `path/to/file`
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: Implement changes
+      description: Concrete deliverables.
+    validations:
+      required: true
+  - type: textarea
+    id: test
+    attributes:
+      label: Test and commit
+      description: How to verify, and what evidence the PR must include.
+      value: |
+        - Run `cargo test -p <crate>`
+        - Cover edge cases
+        - Include test output in the PR description
+    validations:
+      required: true
+  - type: input
+    id: commit-message
+    attributes:
+      label: Example commit message
+      placeholder: "feat: ..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: guidelines
+    attributes:
+      label: Guidelines
+      options:
+        - label: Assignment required before starting.
+          required: true
+        - label: "PR description must include: Closes #<issue_id>"
+          required: true
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Complexity
+      description: Trivial = 100, Medium = 150, High = 200 points.
+      options:
+        - Trivial (100)
+        - Medium (150)
+        - High (200)
+    validations:
+      required: true

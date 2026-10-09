@@ -1,0 +1,31 @@
+# Rust
+/target
+**/*.rs.bk
+Cargo.lock.hash
+
+# Build/CI artifacts
+/dist
+*.wasm
+*.optimized.wasm
+
+# Stellar / Soroban local state
+.stellar/
+.soroban/
+*.secret
+
+# Environment and secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ROS 2
+log/
+build/
+install/

@@ -63,3 +63,15 @@
 - name: "area: docs"
   color: "0075ca"
   description: "Documentation and guides."
+
+- name: "area: contracts"
+  color: "b60205"
+  description: "Soroban smart contracts."
+
+- name: "area: ci"
+  color: "ededed"
+  description: "Build, CI, and developer tooling."
+
+- name: "area: security"
+  color: "111111"
+  description: "Security, threat modeling, hardening."
